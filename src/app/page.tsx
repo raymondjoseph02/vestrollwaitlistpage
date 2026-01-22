@@ -17,9 +17,9 @@ export default function Home() {
       <Hero />
       <Features />
       <HowItWorks />
-      <Workforce />
-      <FAQ />
-      <Pricing />
+      {/* <Workforce /> */}
+      {/* <FAQ /> */}
+      {/* <Pricing /> */}
       <Waitlist />
       <ThirtyDays />
       <ThreeWays />
