@@ -52,15 +52,25 @@ export const HowItWorks = () => {
                 {/* Steps Container with Purple Background */}
                 <div className="rounded-3xl p-8 md:p-10 relative">
                     {/* Steps Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-6 mb-8">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-6 mb-8 relative">
                         {steps.map((step, index) => (
                             <div
                                 key={step.number}
-                                className="flex flex-col items-start"
+                                className="flex flex-col items-start relative"
                             >
-                                {/* Number */}
-                                <div className="text-lg font-bold text-gray-900 mb-3">
-                                    {step.number}
+                                {/* Number Circle with dotted line */}
+                                <div className="flex items-center w-full mb-3">
+                                    {/* Circular Badge */}
+                                    <div className="w-8 h-8 rounded-full bg-white border-2 border-purple-600 flex items-center justify-center flex-shrink-0">
+                                        <span className="text-sm font-bold text-purple-600">
+                                            {step.number}
+                                        </span>
+                                    </div>
+
+                                    {/* Dotted Line - only show if not last item */}
+                                    {index < steps.length - 1 && (
+                                        <div className="hidden md:block flex-1 h-0 border-t-2 border-dotted border-gray-300 ml-2"></div>
+                                    )}
                                 </div>
 
                                 {/* Title */}
