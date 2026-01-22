@@ -37,7 +37,7 @@ function WorkForceGallery() {
           <p className="py-1 px-6 bg-[#FFFFFF4D] text-white backdrop-blur-sm rounded-full absolute left-4.5 bottom-4 md:top-4 md:bottom-auto md:right-4 md:left-auto z-20 text-xs font-bold">
             freelancers
           </p>
-          <div className="w-full h-full relative">
+          <div className="w-full h-full md:h-80 lg:h-full relative">
             {/* bg gradient */}
             <div className="absolute inset-0 bg-[#00000033] " />
             <Image
@@ -87,7 +87,7 @@ function WorkForceGallery() {
           </div>
         </div>
 
-        <div className="relative rounded-2xl  overflow-hidden h-60.75 lg:h-143.75  flex-1 ">
+        <div className="relative rounded-2xl  overflow-hidden h-60.75 md:h-80 lg:h-143.75  lg:flex-1 ">
           <p className="py-1 px-6 bg-[#FFFFFF4D] text-white backdrop-blur-sm rounded-full absolute left-4.5 bottom-4 md:top-4 md:bottom-auto md:right-4 md:left-auto z-20 text-xs font-bold">
             Employers
           </p>

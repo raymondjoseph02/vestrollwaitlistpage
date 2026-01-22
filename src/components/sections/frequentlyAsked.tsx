@@ -4,7 +4,7 @@ import Faq from "../common/Faq";
 import WorkForceGallery from "./WorkForceGallery";
 function FrequentlyAsked() {
   return (
-    <section>
+    <section className="mt-10">
       <div className="max-w-310 mx-auto px-5  flex-col-reverse gap-25 flex lg:flex-col">
         <WorkForceGallery />
         <div className="space-y-5.75">
