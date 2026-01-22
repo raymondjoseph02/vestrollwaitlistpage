@@ -19,14 +19,14 @@ export const Waitlist = () => {
         <section className="py-16 md:py-24 px-4 bg-white bg-linear-to-b from-purple-50/30 to-purple-200/80 overflow-hidden">
             <div className="container mx-auto max-w-7xl">
                 {/* Header with Email Input */}
-                <div className="text-center mb-16">
+                <div className="text-left md:text-center mb-16">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 text-gray-900">
                         Join the wait list
                     </h2>
 
                     {/* Email Form */}
-                    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
-                        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                    <form onSubmit={handleSubmit} className="md:max-w-2xl md:mx-auto">
+                        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center md:justify-center">
                             <div className="relative flex-1 w-full sm:max-w-md">
                                 <div className="absolute left-4 top-1/2 -translate-y-1/2">
                                     <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

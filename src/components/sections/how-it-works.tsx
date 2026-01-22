@@ -34,7 +34,7 @@ export const HowItWorks = () => {
 
     return (
         <section className="py-12 md:py-16 px-4">
-            <div className="container mx-auto bg-linear-to-b from-purple-50 to-purple-100/50 p-10 w-full rounded-2xl">
+            <div className="container mx-auto bg-linear-to-b from-purple-50 to-purple-200 p-10 w-full rounded-2xl">
                 {/* Header */}
                 <div className="mb-12">
                     <div className="flex gap-2 items-center">
@@ -87,7 +87,7 @@ export const HowItWorks = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <div className="flex justify-end">
+                    <div className="flex justify-start md:justify-end">
                         <button className="bg-purple-700 hover:bg-purple-800 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-colors duration-200 font-medium">
                             Create Account
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

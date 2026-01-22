@@ -9,46 +9,46 @@ import Feature6 from "../../assets/feature6.png";
 
 export const Features = () => {
   const features = [
-    { 
-      id: 1, 
-      image: Feature1, 
+    {
+      id: 1,
+      image: Feature1,
       title: "Multiple Payment Types",
       description: "Pay team members the way that works best for your workflow.",
       items: ["Fixed Rate", "Pay-As-You-Go", "Milestone Payments"],
       imagePosition: "center"
     },
-    { 
-      id: 2, 
-      image: Feature2, 
+    {
+      id: 2,
+      image: Feature2,
       title: "Timesheet Management",
       description: "Employees log their hours, employers track productivity all synced with payroll for accurate payment.",
       imagePosition: "right"
     },
-    { 
-      id: 3, 
-      image: Feature3, 
+    {
+      id: 3,
+      image: Feature3,
       title: "Smart Payroll Management",
       description: "Add employees to your payroll, automate payment cycles, and track all disbursements with complete transparency.",
       imagePosition: "center"
     },
-    { 
-      id: 4, 
-      image: Feature4, 
+    {
+      id: 4,
+      image: Feature4,
       title: "Employee Portal",
       description: "Employees can:",
       items: ["Receive payments", "Track earnings", "Access their contracts", "Monitor their timesheets"],
       imagePosition: "right"
     },
-    { 
-      id: 5, 
-      image: Feature5, 
+    {
+      id: 5,
+      image: Feature5,
       title: "Create & Manage Contracts",
       description: "Set up clear agreements for work, deliverables, milestones, and rates. Everything stored securely for future reference.",
       imagePosition: "center"
     },
-    { 
-      id: 6, 
-      image: Feature6, 
+    {
+      id: 6,
+      image: Feature6,
       title: "Stay Compliant Without the Stress",
       description: "Automatically handle payroll taxes and pension remittances while you focus on what matters.",
       imagePosition: "center"
@@ -59,11 +59,11 @@ export const Features = () => {
     <section className="py-20 md:py-28 px-4 bg-gray-50">
       <div className="container mx-auto ">
         {/* Header Section */}
-        <div className="text-center mb-16 md:mb-20">
+        <div className="text-left md:text-center mb-16 md:mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6 text-gray-900 leading-tight">
             A Complete Suite for Payroll and<br />Workforce Management
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 md:max-w-3xl md:mx-auto">
             From crypto/fiat payments to timesheets and contracts, every feature is built to simplify how you manage your team.
           </p>
         </div>
@@ -98,16 +98,15 @@ export const Features = () => {
               </div>
 
               {/* Image */}
-              <div className="relative w-full h-[200px] md:h-[400px] rounded-2xl overflow-hidden">
+              <div className="relative w-full h-[250px] md:h-[400px] rounded-2xl overflow-hidden">
                 <Image
                   src={feature.image}
                   alt={feature.title}
                   fill
-                  className={`object-contain p-4 ${
-                    feature.imagePosition === "right" 
-                      ? "object-right" 
-                      : "object-center"
-                  }`}
+                  className={`object-contain p-4 object-center ${feature.imagePosition === "right"
+                    ? "md:object-right"
+                    : "md:object-center"
+                    }`}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>

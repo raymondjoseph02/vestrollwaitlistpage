@@ -5,8 +5,10 @@ import { Workforce } from "@/components/sections/workforce";
 import { Navbar } from "@/components/layout/navbar";
 import { Pricing } from "@/components/sections/pricing";
 import { FAQ } from "@/components/sections/faq";
-import {ThirtyDays} from "@/components/sections/thirty-days";
+import { ThirtyDays } from "@/components/sections/thirty-days";
 import { Waitlist } from "@/components/sections/waitlist";
+import { ThreeWays } from "@/components/sections/three-ways";
+import { Footer } from "@/components/layout/footer";
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
       <Pricing />
       <Waitlist />
       <ThirtyDays />
+      <ThreeWays />
+      <Footer />
     </div>
   );
 }

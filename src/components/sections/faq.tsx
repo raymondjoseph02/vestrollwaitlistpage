@@ -82,9 +82,8 @@ export const FAQ = () => {
                                             {faq.question}
                                         </h3>
                                         <svg
-                                            className={`w-6 h-6 md:w-7 md:h-7 flex-shrink-0 transition-transform duration-200 mt-1 ${
-                                                openIndex === index ? "rotate-180" : ""
-                                            }`}
+                                            className={`w-6 h-6 md:w-7 md:h-7 flex-shrink-0 transition-transform duration-200 mt-1 ${openIndex === index ? "rotate-180" : ""
+                                                }`}
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
@@ -111,7 +110,7 @@ export const FAQ = () => {
                         </div>
 
                         {/* Load More Button */}
-                        <div className="mt-12 md:mt-16 flex justify-end">
+                        <div className="mt-12 md:mt-16 flex justify-start md:justify-center">
                             <button className="bg-purple-700 hover:bg-purple-800 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg flex items-center gap-2 transition-colors duration-200 font-medium text-base md:text-lg">
                                 <span>Load More</span>
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
