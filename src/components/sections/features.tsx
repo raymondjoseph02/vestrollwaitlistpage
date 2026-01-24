@@ -15,21 +15,21 @@ export const Features = () => {
       title: "Multiple Payment Types",
       description: "Pay team members the way that works best for your workflow.",
       items: ["Fixed Rate", "Pay-As-You-Go", "Milestone Payments"],
-      imagePosition: "center"
+      imagePosition: "bottom-right"
     },
     {
       id: 2,
       image: Feature2,
       title: "Timesheet Management",
       description: "Employees log their hours, employers track productivity all synced with payroll for accurate payment.",
-      imagePosition: "right"
+      imagePosition: "bottom-right"
     },
     {
       id: 3,
       image: Feature3,
       title: "Smart Payroll Management",
       description: "Add employees to your payroll, automate payment cycles, and track all disbursements with complete transparency.",
-      imagePosition: "center"
+      imagePosition: "bottom-right"
     },
     {
       id: 4,
@@ -37,30 +37,30 @@ export const Features = () => {
       title: "Employee Portal",
       description: "Employees can:",
       items: ["Receive payments", "Track earnings", "Access their contracts", "Monitor their timesheets"],
-      imagePosition: "right"
+      imagePosition: "padded-right"
     },
     {
       id: 5,
       image: Feature5,
       title: "Create & Manage Contracts",
       description: "Set up clear agreements for work, deliverables, milestones, and rates. Everything stored securely for future reference.",
-      imagePosition: "center"
+      imagePosition: "bottom-center"
     },
     {
       id: 6,
       image: Feature6,
       title: "Stay Compliant Without the Stress",
       description: "Automatically handle payroll taxes and pension remittances while you focus on what matters.",
-      imagePosition: "center"
+      imagePosition: "bottom-center"
     },
   ];
 
   return (
     <section className="py-20 md:py-28 px-4 bg-gray-50">
-      <div className="container mx-auto ">
+      <div className="container mx-auto">
         {/* Header Section */}
         <div className="text-left md:text-center mb-16 md:mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6 text-gray-900 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6 text-black leading-tight font-regular">
             A Complete Suite for Payroll and<br />Workforce Management
           </h2>
           <p className="text-base md:text-lg text-gray-600 md:max-w-3xl md:mx-auto">
@@ -73,18 +73,18 @@ export const Features = () => {
           {features.map((feature) => (
             <div
               key={feature.id}
-              className=" bg-linear-to-br from-purple-100 via-purple-50 to-purple-200 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 min-h-[500px]"
+              className="bg-[#FCF9FF] rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 min-h-[500px] flex flex-col overflow-hidden"
             >
-              {/* Title and Description */}
-              <div className="mb-6">
-                <h3 className="text-xl md:text-4xl font-semibold text-gray-900 mb-3">
+              {/* Text Content - Always Padded */}
+              <div className="p-6 md:p-8 md:pb-4">
+                <h3 className="text-xl md:text-4xl font-regular text-gray-900 mb-3">
                   {feature.title}
                 </h3>
                 <p className="text-sm md:text-lg text-gray-600 leading-relaxed">
                   {feature.description}
                 </p>
                 {feature.items && (
-                  <ul className="mt-3 space-y-2 font-bold">
+                  <ul className="mt-4 space-y-2 font-regular">
                     {feature.items.map((item, idx) => (
                       <li key={idx} className="flex items-center text-sm md:text-base text-gray-700">
                         <svg className="w-4 h-4 mr-2 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,18 +97,49 @@ export const Features = () => {
                 )}
               </div>
 
-              {/* Image */}
-              <div className="relative w-full h-[250px] md:h-[400px] rounded-2xl overflow-hidden">
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  fill
-                  className={`object-contain p-4 object-center ${feature.imagePosition === "right"
-                    ? "md:object-right"
-                    : "md:object-center"
-                    }`}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+              {/* Image Content - "Ground Floor" Logic */}
+              <div className={`mt-auto relative w-full flex ${feature.imagePosition.includes("right") ? "justify-end" : "justify-center"
+                } ${feature.id === 4 ? "p-6 md:p-8 pt-0 pr-2" : ""}`}>
+
+                {feature.id === 4 ? (
+                  // Employee Portal: Padded and potentially smaller
+                  <div className="flex flex-col md:flex-row items-start gap-2 w-full">
+                    <ul className="space-y-2 font-regular flex-1 hidden md:block pt-4">
+                      {feature.items?.map((item, idx) => (
+                        <li key={idx} className="flex items-center text-sm md:text-base text-gray-700">
+                          <svg className="w-4 h-4 mr-2 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="relative w-full md:w-[60%] h-[220px] md:h-[320px] pr-2">
+                      <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        fill
+                        className="object-contain object-right"
+                        sizes="(max-width: 768px) 100vw, 30vw"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  // Standard Features: Flush at the bottom (Ground Floor)
+                  <div className={`relative ${feature.imagePosition.includes("right") ? "w-[85%] md:w-[75%] md:mr-10" : "w-full"
+                    } h-[220px] md:h-[340px]`}>
+                    <Image
+                      src={feature.image}
+                      alt={feature.title}
+                      fill
+                      className={`object-contain ${feature.imagePosition.includes("right")
+                        ? "object-right-bottom"
+                        : "object-bottom"
+                        }`}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ))}

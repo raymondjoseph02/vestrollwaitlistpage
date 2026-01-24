@@ -10,7 +10,7 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white backdrop-blur-md border-b shadow-xl">
+    <nav className="fixed top-0 w-full z-50 bg-white backdrop-blur-md border-b shadow-md">
       <div className="container mx-auto px-4 h-24 flex items-center justify-between">
         <Link href="/" className="font-bold text-2xl tracking-tight flex items-center gap-2">
           <Image src={Logo} alt="Vestroll Logo" width={32} height={32} />

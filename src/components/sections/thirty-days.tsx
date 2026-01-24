@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import CheckIcon from "../../assets/check.svg";
 
 interface ChecklistItem {
     text: string;
@@ -30,15 +32,14 @@ export const ThirtyDays = () => {
         {
             title: "Ask why you didn't switch years ago",
             items: [
-                { text: "100% of business spend moved to ramp" },
+                { text: "100% of business spend moved to Vestroll" },
                 { text: "Intake-to-pay 8.5x more efficient" },
                 { text: "Books close 75% faster" }
             ]
         }
     ];
 
-    const timelineDays = ["Today", "Day 6", "Day 30"];
-    // Mobile specific labels based on image ("Today", "Day 5", "Day 30") - sticking to array but maybe adjusting text if needed. User image says "Day 5" but code has "Day 6". Sticking to code unless asked. User image says "Day 5", I will update to match image? No, user said "This is how 30 days section should look", implies visual structure. I will keep "Day 6" unless I see "Day 5" in the image explicitly... yes I see "Day 5" in the image. I'll switch to Day 5 to be safe.
+    const timelineDays = ["Today", "Day 5", "Day 30"];
     const timelineDaysMobile = ["Today", "Day 5", "Day 30"];
 
     return (
@@ -46,7 +47,7 @@ export const ThirtyDays = () => {
             <div className="container mx-auto max-w-7xl">
                 {/* Header */}
                 <div className="text-left md:text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl mb-8 text-gray-900 leading-tight md:max-w-4xl md:mx-auto">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl mb-8 text-gray-900 leading-tight md:max-w-4xl md:mx-auto font-regular">
                         Here's what you get done with Vestroll in just 30 days
                     </h2>
 
@@ -59,16 +60,18 @@ export const ThirtyDays = () => {
                 {/* Desktop Layout */}
                 <div className="hidden md:block">
                     {/* Timeline */}
-                    <div className="relative mb-16 max-w-5xl mx-auto px-1.5">
-                        <div className="flex justify-between items-end relative">
+                    <div className="relative mb-16 max-w-5xl mx-auto">
+                        <div className="flex justify-between items-end relative w-full">
                             {timelineDays.map((day, index) => (
-                                <div key={index} className="flex flex-col items-center z-10 relative">
+                                <div key={index} className="flex flex-col items-center z-10 relative flex-1">
+                                    {/* Timeline Line Segment */}
+                                    {index < timelineDays.length - 1 && (
+                                        <div className="absolute bottom-[6px] left-[50%] right-[-50%] h-0.5 bg-purple-200 z-0"></div>
+                                    )}
                                     <span className="text-sm md:text-base text-gray-600 px-5 py-1 bg-purple-50 rounded-lg font-medium mb-3">{day}</span>
-                                    <div className="w-3 h-3 bg-white border-2 border-purple-600 rounded-full"></div>
+                                    <div className="w-3 h-3 bg-white border-2 border-purple-600 rounded-full relative z-10"></div>
                                 </div>
                             ))}
-                            {/* Timeline Line - connects dot centers, doesn't extend beyond */}
-                            <div className="absolute bottom-[6px] left-1.5 right-1.5 h-0.5 bg-purple-200 z-0"></div>
                         </div>
                     </div>
 
@@ -77,9 +80,9 @@ export const ThirtyDays = () => {
                         {timelineCards.map((card, index) => (
                             <div
                                 key={index}
-                                className="bg-purple-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-200"
+                                className="bg-[#FCF9FF] border-2 border-[#E9D3FF] rounded-2xl p-8 hover:shadow-lg transition-shadow duration-200"
                             >
-                                <h3 className="text-xl md:text-2xl mb-6 text-gray-900">
+                                <h3 className="text-xl md:text-2xl mb-6 text-gray-900 font-medium">
                                     {card.title}
                                 </h3>
 
@@ -87,12 +90,10 @@ export const ThirtyDays = () => {
                                     {card.items.map((item, itemIndex) => (
                                         <li key={itemIndex} className="flex items-start gap-3">
                                             {/* Check Circle Icon */}
-                                            <div className="flex-shrink-0 w-6 h-6 rounded-full border-2 border-purple-600 flex items-center justify-center mt-0.5">
-                                                <svg className="w-3 h-3 text-gray-600" fill="gray" stroke="gray" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                                </svg>
+                                            <div className="flex-shrink-0 w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <Image src={CheckIcon} alt="Check" width={24} height={24} />
                                             </div>
-                                            <span className="text-base text-gray-700 leading-relaxed">
+                                            <span className="text-sm text-gray-700 leading-relaxed">
                                                 {item.text}
                                             </span>
                                         </li>
@@ -120,18 +121,16 @@ export const ThirtyDays = () => {
 
                                 {/* Card Content */}
                                 <div className="bg-purple-50 rounded-2xl p-6 flex-1 border border-purple-100/50 hover:shadow-md transition-shadow">
-                                    <h3 className="text-lg font-bold mb-4 text-gray-900">
+                                    <h3 className="text-lg font-medium mb-4 text-gray-900">
                                         {card.title}
                                     </h3>
                                     <ul className="space-y-3">
                                         {card.items.map((item, itemIndex) => (
                                             <li key={itemIndex} className="flex items-start gap-3">
-                                                <div className="flex-shrink-0 w-5 h-5 rounded-full border border-gray-400 flex items-center justify-center mt-0.5">
-                                                    <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                    </svg>
+                                                <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center mt-0.5">
+                                                    <Image src={CheckIcon} alt="Check" width={13} height={13} />
                                                 </div>
-                                                <span className="text-sm text-gray-600 leading-relaxed font-medium">
+                                                <span className="text-xs text-gray-600 leading-relaxed font-medium">
                                                     {item.text}
                                                 </span>
                                             </li>
