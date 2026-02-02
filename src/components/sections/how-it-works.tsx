@@ -66,9 +66,9 @@ export const HowItWorks = () => {
         </div>
 
         {/* Steps Container with Purple Background */}
-        <div className="rounded-3xl mt-8 md:p-10 relative">
+        <div className="rounded-3xl mt-8">
           {/* Steps Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-6 mb-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-6 mb-8 ">
             {steps.map((step, index) => (
               <motion.div
                 initial={{ y: 20, opacity: 0 }}

@@ -49,7 +49,7 @@ function FrequentlyAsked() {
               Got Questions? We&apos;ve Got Answers!
             </motion.h4>
           </div>
-          <div className="flex  gap-6">
+          <div className="flex  gap-6 flex-col items-center lg:flex-row">
             <div className="md:flex hidden   border border-[#F3F4F6] rounded-[40px] px-5 py-6">
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
